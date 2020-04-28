@@ -1,4 +1,4 @@
-# png-color-counter
+# png-colors-counter
 8bit palette png color counter
 
 Usage:
