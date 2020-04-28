@@ -1,13 +1,15 @@
+import sys
 from PIL import Image, ImageDraw
 
 if len (sys.argv) > 1:
         im1 = Image.open(sys.argv[-1]).convert("P")
+        
         im = im1.convert('RGB').convert('P', palette=Image.ADAPTIVE)
         FileName = "count.txt"
         PictPal = im.getpalette()
         ColorsNum = im.getcolors()
         with open(FileName, "w") as file:
-                file.write('Number of colors in image = ' + str(len(ColorsNum))+"\n\n")
+                file.write('Number of colors in image = ' + str(len(ColorsNum))+"\n\n"+"Pixel count by color:\n\n" )
         n=0
         for i in range (len(ColorsNum)):
                 text = ColorsNum[i]
@@ -21,7 +23,7 @@ if len (sys.argv) > 1:
                 img.save("color_0"+str(i)+".png")
                 n+=3
         with open(FileName, "a") as file:
-                file.write("\n-----------------------------------\n")
-                file.write("image colors counter by nodeus ©2018")
+                file.write("\n---------------------------------------------\n")
+                file.write("image colors counter by nodeus ©2018-2020")
 else:
-        print ("Нет аргументов! Вызов должен быть в формате color-conter.exe image.png")
+        print ("Аргументы отсутствуют. Вызов должен быть в формате: color-conter.exe image.png")
