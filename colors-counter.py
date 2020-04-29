@@ -2,9 +2,9 @@ import sys
 from PIL import Image, ImageDraw
 
 if len (sys.argv) > 1:
-        im1 = Image.open(sys.argv[-1]).convert("P")
+        im1 = Image.open(sys.argv[-1])
         
-        im = im1.convert('RGB').convert('P', palette=Image.ADAPTIVE)
+        im = im1.convert('RGB').convert('P', palette=Image.ADAPTIVE, colors=256)
         FileName = "count.txt"
         PictPal = im.getpalette()
         ColorsNum = im.getcolors()
