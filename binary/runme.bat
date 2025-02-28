@@ -1,1 +1,1 @@
-colors-counter.exe dream.png
+colors-counter.exe catofairy.png

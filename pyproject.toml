@@ -1,0 +1,10 @@
+[project]
+name = "png-color-counter"
+version = "0.2.0"
+description = "Colors counter for 8bit png images"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pillow",
+    "pyinstaller>=6.12.0",
+]
